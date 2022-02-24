@@ -1,0 +1,52 @@
+#####################
+# This file defines a single workflow named "Tests".
+# GitHub actions currently do not support multiple workflows per YAML file.
+#####################
+
+#####################
+# Workflow: an automated process defined by a YAML file made up of one or more jobs that runs a set of actions contained in a job.
+# Actions: the commands/tasks used to automate responses to events.
+# Event: A specific activity that occurs inside or outside GitHub.
+# name: the workflow syntax used to define the name of the GitHub workflow.
+# -name: syntax used to define the name of the step.
+# on: syntax used to define the GitHub events that trigger a workflow run containing a job.
+# jobs: syntax used to define the steps to control the order in which actions are run. Each job runs on a different server.
+# steps: sequence of tasks (actions) to be executed.
+# uses: attribute used to define an action. See the list of repositories for official actions available at https://github.com/actions.
+# run: attribute used to run a command-line command.
+#####################
+
+# Workflow
+##########################################
+# linux-tests:
+name: Tests # Defines the name (arbitrary) of the workflow.
+on: # Trigger the workflow "Tests" to run on push or pull request events.
+  push: # Defines the push request event that occurs when a new commit is pushed to one of these branches:
+    branches: [dev, "stable/*"]
+  pull_request: # Event triggered when a pull request is created from one of these branches:
+    branches: [dev, "stable/*"]
+jobs:
+  tests: # Defines the name of the first job (arbitrary). 
+    name: tests-python${{ matrix.python-version }}-${{ matrix.os }}
+    runs-on: ${{ matrix.os }} # Used to test each new release/commit on multiple O.S platforms from GitHub servers running the current workflow.
+    strategy:
+      matrix:
+        python-version: [3.7.12]
+        os: ["macOS-latest", "ubuntu-latest"]
+    steps:
+      - name: Chekout code # Name of the first step.
+        uses: actions/checkout@v2 # Defines an action to be run. This action check out the repository.
+      - name: Set up Python ${{ matrix.python-version }} # Name of the second step.
+        uses: actions/setup-python@v2 # This action set up your environment with python.
+        with:
+          python-version: ${{ matrix.python-version }} # Defines the python version to be installed.
+      - name: Pip cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-${{ matrix.python-version }}-pip-tests-${{ hashFiles('setup.py','requirements-dev.txt','requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.python-version }}-pip-tests-
+            ${{ runner.os }}-${{ matrix.python-version }}-pip-
+            ${{ runner.os }}-${{ matrix.python-version }}
+##########################################

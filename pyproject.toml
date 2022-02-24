@@ -1,0 +1,6 @@
+# A human-usable file used to specify the required build tools of the Python ecosystem to build a wheel and to avoid the catch-22 trap (chicken-egg dilemma) that a setup.py has.
+
+[build-system]
+# Minimum requirements for the build system to execute.
+requires = ["setuptools>=40.6.0", "wheel"] # PEP 508 specifications.
+build-backend = "setuptools.build_meta"

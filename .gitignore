@@ -1,0 +1,37 @@
+# Packages
+*.egg
+*.egg-info
+dist
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+#lib
+#lib64
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.tx
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# GitHub Pages
+_config.yml
+
+# pyenv
+.python-version
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Unit test

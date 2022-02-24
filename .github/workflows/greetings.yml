@@ -1,0 +1,38 @@
+#####################
+# This file defines a single workflow named "Greetings".
+# GitHub actions currently do not support multiple workflows per YAML file.
+#####################
+
+#####################
+# Workflow: an automated process defined by a YAML file made up of one or more jobs that runs a set of actions contained in a job.
+# Actions: the commands/tasks used to automate responses to events.
+# Event: A specific activity that occurs inside or outside GitHub.
+# name: the workflow syntax used to define the name of the GitHub workflow.
+# -name: syntax used to define the name of the step.
+# on: syntax used to define the GitHub events that trigger a workflow run containing a job.
+# jobs: syntax used to define the steps to control the order in which actions are run. Each job runs on a different server.
+# steps: sequence of tasks (actions) to be executed.
+# uses: attribute used to define an action. See the list of repositories for official actions available at https://github.com/actions.
+# run: attribute used to run a command-line command.
+#####################
+
+name: Greetings
+
+on: # Trigger the workflow "Greetings" to run on push or pull request events.
+  pull_request: # Event triggered when a pull request is created from the dev branch.
+    branches: [dev]
+
+jobs:
+  greeting: # Define the name (arbitrary) of the first job. 
+    runs-on: ubuntu-latest # Used to test each new release/commit on a specified O.S platform (a.k.a runner) from a GitHub server that is running the current workflow.
+                           # To test in multiple O.S platforms, one has to replace it with "runs-on: ${{ matrix.os}}". Followed by "strategy: matrix: os: [os1, os2,...,osn]".
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1 # Defines an action to be run.
+      with: # Attribute used to define a set of parameters.
+        repo-token: ${{ secrets.GITHUB_TOKEN }} # Placeholder referencing a secret. One can add/store a new workflow secret for Actions at https://github.com/QuCAI-Lab/<repo-name>/settings/secrets/actions.
+                                                # A GITHUB_TOKEN is provided out-of-the-box by GitHub Actions, therefore, there's no need to add one manually.
+        issue-message: 'Greetings! Thank you for your time. Your feedback helps us troubleshoot issues.'
+        pr-message: 'Greetings! Thank you for your time. Your contribution helps us improve our package.'

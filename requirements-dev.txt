@@ -1,0 +1,16 @@
+# Dev tools
+ipython>=5.5.0 #Run using: $ ipython
+jupyter #Run using: "$ jupyter notebook" or "$ ipython notebook" once ipython is installed.
+jupyterlab #Run using: $ jupyter-lab
+
+# Build tools
+#build #Run using: $ python -m build
+#wheel
+
+# Unit tests
+pytest
+
+# COMMENTS
+# To use IPython with notebooks or the Qt console we also install Jupyter: $ python -m pip install jupyter.
+# The 'pip install jupyter' command will install the Jupyter system, including the jupyter notebook, qtconsole, and the IPython kernel.
+# The -m flag in "python -m pip" enforce the pip version tied to the active environment (executes pip as the __main__ module).
