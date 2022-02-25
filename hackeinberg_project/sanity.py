@@ -20,7 +20,7 @@ if os.name == 'nt':
         WARNING:\n \
         >> This package depends on PySCF.\n \
         >> PySCF has no support for native windows platform.\n \
-        >> Install PySCF on a Linux distribution: $ python -m pip install pyscf --user.\n \
+        >> Install PySCF on a Linux distribution: $ python3 -m pip install pyscf --user.\n \
         ###################################\n"
          )
     raise

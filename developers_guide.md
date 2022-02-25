@@ -13,7 +13,7 @@ The current [CI/CD](https://www.redhat.com/en/topics/devops/what-is-ci-cd) tool 
 >Linux users using the system Python without a virtual environment, should work with the `python3` and `python3 -m pip --user` commands. 
 >Windows users should replace the above commands with `python` and `python -m pip`, respectively.
 
-One can install the [pre-release](https://github.com/QuCAI-Lab/qhack2022-backup/releases/tag/0.0.1) of `qhack2022-hackeinberg-project` via pip (a python package manager):
+One can install the [pre-release](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/releases/tag/0.0.1) of `qhack2022-hackeinberg-project` via pip (a python package manager):
 
 1. First, check the installed python version on a command-line interface (CLI):
 ```bash
