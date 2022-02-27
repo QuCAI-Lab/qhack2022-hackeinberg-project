@@ -38,7 +38,7 @@ For specific versions, see the [requirements.txt](requirements.txt) file.
 
 # First Steps
 
-Primary results can be seen in the [jupyter notebook file](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/notebook.ipynb).
+Primarily results can be seen in the [jupyter notebook file](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/notebook.ipynb).
 
 To stay up-to-date with the latest version of `qhack2022-hackeinberg-project`, we strongly recommend you to [fork this repository](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork). If you would like to install the source code from scratch using your conda environment on-prem, please resort to the `Installation Instructions` heading on the [**Developer's Guide**](developers_guide.md).
 
@@ -49,13 +49,18 @@ conda list qhack2022-hackeinberg-project
 ```
 Quick test-drive:
 ```bash
+>>> python hackeinberg_project/main/simulation.py
+```
+Alternatively, run the package:
+```bash
 $ python
 ```
 ```python
 >>> import hackeinberg_project as hack
 >>> hack.about()
->>> hack.penny_simulation()
+>>> hack.penny_simulation(params, H, HF, sets, qubits, conv_tol, threshold)
 ```
+
 
 # Project Description:
 
@@ -68,6 +73,34 @@ In this work, we combine some of the existing methods applied to the hybrid quan
 3. Small number of hyperparameters: we seek the minimum amount of angles to be optimized in order to avoid classical optimization overhead (when classical computation becomes too expensive).
 
 In the early stages of the project, the goal is to find a quasi-optimal ansatz by restricting the VQE simulation to single and double order excitations only. For the future, we plan to use a deep reinforcement learning approach to learn an exact circuit ansatz considering higher excitation orders and the [Qamuy SDK](https://qamuy.qunasys.com/docs/en/).
+
+## Algorithm outline
+
+1. With the spin orbitals of the molecule of interest, compute its second-quantized electronic Hamiltonian in the STO-3G basis.
+
+2. Map the fermionic Hamiltonian given in terms of its fermionic operators into a spin qubit-equivalent Hamiltonian using either Bravyi-Kitaev or the inverted Jordan–Wigner transformation. This is required to perform gate-based quantum computation. The Hamiltonian will be used to compute the cost function that evaluate the expectation value of the Hamiltonian, while the number of qubits is required to obtain the electronic excitations and to set up the quantum circuit.
+
+3. Obtain the single and double electronic excitations by acting with the electron annihilation and creation operators on the Hartree-Fock reference state.
+
+4. Define a set with all unique single and double excitations to create the correspondent SO(2) unitary qubit gates (the particular Givens rotations) to each electronic excitation operator in order to build a quantum circuit ansatz of particle-conserving unitary qubit gates.
+
+5. Initialize the qubit state to a reference Hartree-Fock state.
+
+6. Initialize the parameter values of each gate in the ansatz to zero, i.e, initialize the ansatz to the identity matrix in order to compute the gradients with respect to the Hartree-Fock state.
+
+7. Prepare the trial estate with the current ansatz.
+
+8. Define the cost function as the expectation value of the qubit Hamiltonian. Define an optimizer (e.g. SGD).
+
+9. Use the parameter shift rule to compute the gradient of the cost function with respect to its tunable parameters.
+
+10. Identify the operators (gates) with the largest gradient. Add to the ansatz the gate whose gradient is the largest. Remove gates whose gradient are smaller than a pre-defined threshold.
+
+11.  Use the optimizer to update the circuit parameters according to a VQE experiment.
+
+12. Define the convergence as the difference between the previous and the next expected value for the current optimization step. If the convergence tolerance is less than or equal to a pre-defined threshold $\epsilon$, exit the optimization loop and evaluate the cost metric of the final optimized circuit by measuring its circuit depth.
+
+13. Repeat step 9.
 
 # Challenges:
 
