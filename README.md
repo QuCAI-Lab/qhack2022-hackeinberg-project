@@ -96,7 +96,7 @@ In the early stages of the project, the goal is to find a quasi-optimal ansatz b
 
 10. Identify the operators (gates) with the largest gradient. Add to the ansatz the gate whose gradient is the largest. Remove gates whose gradient are smaller than a pre-defined threshold.
 
-11.  Use the optimizer to update the circuit parameters according to a VQE experiment.
+11. Use the optimizer to update the circuit parameters according to a VQE experiment.
 
 12. Define the convergence as the difference between the previous and the next expected value for the current optimization step. If the convergence tolerance is less than or equal to a pre-defined threshold $\epsilon$, exit the optimization loop and evaluate the cost metric of the final optimized circuit by measuring its circuit depth.
 
