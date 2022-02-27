@@ -42,4 +42,4 @@ def about():
   print("Qamuy Client SDK version: 0.28.0")
   
 # Simulation
-from .main.simulation import vanilla, qunasys_qamuy
+from .main.simulation import penny_simulation, qunasys_qamuy

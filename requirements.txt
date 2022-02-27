@@ -15,7 +15,7 @@ jupyter #Run using: "$ jupyter notebook"
 ## Replace [user name] and [password] with those provided by https://qamuy.qunasys.com/.
 
 # CLI - command-line interface
-## To show pip version, run: $ pip --version
+## To show the current pip version, run: $ pip --version
 ## To install an individual package, run: $ python3 -m pip install <package-name>.
 ## To list installed packages, run: $ pip list
 ## To show a package info, run: $ pip show <package-name>

@@ -114,7 +114,7 @@ $ python
 ```python
 >>> import hackeinberg_project as hack
 >>> hack.about()
->>> hack.run()
+>>> hack.penny_simulation()
 ```
 
 # Local Update

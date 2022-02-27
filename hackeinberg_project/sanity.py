@@ -20,7 +20,7 @@ if os.name == 'nt':
         WARNING:\n \
         >> This package depends on PySCF.\n \
         >> PySCF has no support for native windows platform.\n \
-        >> Install PySCF on a Linux distribution: $ python3 -m pip install pyscf --user.\n \
+        >> To install PySCF on a Linux distribution, run: $ python3 -m pip install pyscf --user.\n \
         ###################################\n"
          )
     raise
@@ -31,7 +31,7 @@ except ImportError:
       ###################################\n \
       WARNING:\n \
       >> This package depends on PennyLane.\n \
-      >> Install PennyLane as per the documentation instructions at https://pennylane.readthedocs.io/en/stable/development/guide/installation.html.\n \
+      >> To install PennyLane, run: $ python3 -m pip install pennylane.\n \
       ###################################\n"
        )
 try:
@@ -41,7 +41,7 @@ except ImportError:
       ###################################\n \
       WARNING:\n \
       >> This package depends on pennylane-qchem\n \
-      >> To install, run: $ python -m pip install pennylane-qchem.\n \
+      >> To install qhchem, run: $ python3 -m pip install pennylane-qchem.\n \
       ###################################\n"
        )
 try:
