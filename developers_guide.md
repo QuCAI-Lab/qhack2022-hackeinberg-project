@@ -41,7 +41,7 @@ python3 -m pip install --user git
 ```
 4. To install the pre-release of `qhack2022-hackeinberg-project` from source, simply run:
 ```bash
-python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackeinberg-project.git@0.0.1#egg=pre
+python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackeinberg-project.git@0.0.1
 ```
 To install a specific release, run:
 ```bash

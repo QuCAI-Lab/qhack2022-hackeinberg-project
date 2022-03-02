@@ -45,11 +45,7 @@ except ImportError:
       ###################################\n"
        )
 try:
-  import qamuy
-  #from qamuy.client import Client
-  #email='' # Fill in your e-mail address.
-  #token='' # Fill in your password.
-  #client = Client(email_address=email, password=token)      
+  import qamuy   
 except ImportError:
   print(" \
       ###################################\n \

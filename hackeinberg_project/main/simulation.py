@@ -59,13 +59,11 @@ def penny_simulation(params, H, HF, sets, qubits, conv_tol, threshold):
 
   for n in range(epochs):
     t1 = time.time()
-
     grads = circuit_gradient(params,to_gates=sets) # Step 9.
     maxpos = np.argmax(grads) # Beginning of Step 10.
     max=sets[maxpos]
     sets.append(max)
-    params=np.append(params, 0) # End of step 10.
-    
+    params=np.append(params, 0) # End of step 10.    
     params, prev_energy = opt.step_and_cost(cost, params, to_gates=sets) # Step 11.
     energy.append(cost(params, to_gates=sets))
     conv = np.abs(-7.8825378193 - prev_energy) # Step 12.
