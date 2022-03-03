@@ -36,9 +36,15 @@
 
 For specific versions, see the [requirements.txt](requirements.txt) file.
 
-# First Steps
+# Preliminary Results
 
-Primarily results can be seen in the [jupyter notebook file](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/notebook.ipynb).
+**Get the source code [here](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/hackeinberg_project/main/simulation.py).**
+
+Comparison with different approaches can be seen in the [jupyter notebook file](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/notebook.ipynb).
+
+![](plot.png)
+
+# First Steps
 
 To stay up-to-date with the latest version of `qhack2022-hackeinberg-project`, we strongly recommend you to [fork this repository](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork). If you would like to install the source code from scratch using your conda environment on-prem, please resort to the `Installation Instructions` heading on the [**Developer's Guide**](developers_guide.md).
 
@@ -47,11 +53,11 @@ cd <gitclone_directory> && conda env create -n <env_name> environment.yml
 conda activate <env_name> && python -m pip install --no-deps -v -e .
 conda list qhack2022-hackeinberg-project
 ```
-Quick test-drive:
+**Quick test-drive:**
 ```bash
 >>> python hackeinberg_project/main/simulation.py
 ```
-Alternatively, run the package:
+**Alternatively, run the package:**
 ```bash
 $ python
 ```
@@ -60,7 +66,6 @@ $ python
 >>> hack.about()
 >>> hack.penny_simulation(params, H, HF, sets, qubits, conv_tol, threshold)
 ```
-
 
 # Project Description:
 
@@ -74,7 +79,7 @@ In this work, we combine some of the existing methods applied to the hybrid quan
 
 In the early stages of the project, the goal is to find a quasi-optimal ansatz by restricting the VQE simulation to single and double order excitations only. For the future, we plan to use a deep reinforcement learning approach to learn an exact circuit ansatz considering higher excitation orders and the [Qamuy SDK](https://qamuy.qunasys.com/docs/en/).
 
-## Algorithm outline
+## Algorithm Outline
 
 1. With the spin orbitals of the molecule of interest, compute its second-quantized electronic Hamiltonian in the STO-3G basis.
 
@@ -98,7 +103,7 @@ In the early stages of the project, the goal is to find a quasi-optimal ansatz b
 
 11. Use the optimizer to update the circuit parameters according to a VQE experiment.
 
-12. Define convergence as the difference between the previous and the next expected value for the current optimization step. If the convergence tolerance is less than or equal to a pre-defined threshold $\epsilon$, exit the optimization loop and evaluate the cost metric of the final optimized circuit by measuring its circuit depth.
+12. Define convergence as the difference between the ground truth and the expected value for the current optimization step. If the convergence tolerance is less than or equal to a pre-defined threshold $\epsilon$, exit the optimization loop and evaluate the cost metric of the final optimized circuit by measuring its circuit depth.
 
 13. Repeat step 9.
 
