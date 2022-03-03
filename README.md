@@ -40,7 +40,7 @@ For specific versions, see the [requirements.txt](requirements.txt) file.
 
 **Get the source code [here](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/hackeinberg_project/main/simulation.py).**
 
-Comparison with different approaches can be seen in the [jupyter notebook file](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/notebook.ipynb).
+Comparison with different approaches can be seen in the [jupyter notebook file](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/presentation.ipynb).
 
 <div align="center">
   <a href="https://raw.githubusercontent.com/QuCAI-Lab/qhack2022-hackeinberg-project/dev/assets/plot.png"><img src="assets/plot.png" height="500" width="500" /></a>
