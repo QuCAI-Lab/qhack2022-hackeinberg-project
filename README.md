@@ -42,7 +42,9 @@ For specific versions, see the [requirements.txt](requirements.txt) file.
 
 Comparison with different approaches can be seen in the [jupyter notebook file](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/notebook.ipynb).
 
-![](plot.png)
+<div align="center">
+  <a href="https://raw.githubusercontent.com/QuCAI-Lab/qhack2022-hackeinberg-project/dev/assets/plot.png"><img src="assets/plot.png" height="500" width="500" /></a>
+</div>
 
 # First Steps
 
