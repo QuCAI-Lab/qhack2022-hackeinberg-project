@@ -1,9 +1,10 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/presentation.ipynb)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)
+[![License](https://img.shields.io/github/license/QuCAI-Lab/QHack2022.svg?logo=CreativeCommons&style=flat-square)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/LICENSE.md)
+![Contributions](https://img.shields.io/badge/contributions-welcome-orange?style=flat-square)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/graphs/commit-activity)
 [![Build Status](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/actions/workflows/tests.yml/badge.svg?branch=dev)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/actions/workflows/tests.yml)
 [![Release](https://img.shields.io/github/release/QuCAI-Lab/qhack2022-hackeinberg-project.svg)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/releases)
-[![commit](https://img.shields.io/github/last-commit/QuCAI-Lab/qhack2022-hackeinberg-project)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/commits)
-[![Forks](https://img.shields.io/github/forks/QuCAI-Lab/qhack2022-hackeinberg-project)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork)
 
 <div align="center">
   <a href="https://qucai-lab.github.io/"><img src="https://github.com/QuCAI-Lab/qucai-lab.github.io/blob/main/assets/QuCAI-Lab.png" height="500" width="500" /></a>
@@ -28,12 +29,16 @@
 <!--  -->
 
 # Dependencies
-
-[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
-[![Qamuy](https://img.shields.io/badge/Qamuy-%233F4F75.svg?style=for-the-badge&logo=Qamuy&logoColor=white)](https://qamuy.qunasys.com/docs/en/)
-[![PennyLane](https://img.shields.io/badge/PennyLane-%233F4F75.svg?style=for-the-badge&logo=PennyLane&logoColor=white)](https://pennylane.ai/)
-[![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
-
+<code>
+<a href="https://www.python.org/"><img height="27" src="https://www.python.org/static/img/python-logo.png">
+<a href="https://numpy.org/"><img height="27" src="https://numpy.org/images/logo.svg">
+<a href="https://matplotlib.org"><img height="27" src="https://matplotlib.org/_static/images/logo2.svg"> 
+<a href="https://pennylane.ai/"><img height="27" src="https://pennylane.ai/img/xanadu_x.png"></a>
+<a href="https://qamuy.qunasys.com/docs/en/"><img height="27" src="https://qunasys.com/_nuxt/img/logo_header.cb3726d.svg"></a>
+</code>
+<br>
+<br>
+  
 For specific versions, see the [requirements.txt](requirements.txt) file.
 
 # Preliminary Results
