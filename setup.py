@@ -51,7 +51,7 @@ with open(VERSION_PATH, "r") as version_file:
     VERSION = version_file.read().strip()
     
 setup(
-    name="qhack2022-hackeinberg-project", # The name for your package, the same name given to the main folder of your File Structure (package tree).
+    name="hackeinberg_project", # The name for your package, the same name given to the main folder of your File Structure (package tree).
     packages=find_packages(), # A list of packages to be manipulated. 
                               # If there is only one pure python module, set the variable to a list containing a single string value: packages = ["hackeinberg_project"].
                               # This will make Setuptools to look for the hackeinberg_project/__init__.py file that is required so that Python treat the directory as a package. 
