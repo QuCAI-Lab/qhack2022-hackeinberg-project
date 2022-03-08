@@ -53,7 +53,7 @@ Comparison with different approaches can be seen in the [jupyter notebook file](
 
 # First Steps
 
-To stay up-to-date with the latest version of `qhack2022-hackeinberg-project`, we strongly recommend you to [fork this repository](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork). If you would like to install the source code from scratch using your conda environment on-prem, please resort to the `Installation Instructions` heading on the [**Developer's Guide**](developers_guide.md).
+To stay up-to-date with the latest version of the `hackeinberg-project`, we strongly recommend you to [fork this repository](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork). If you would like to install the source code from scratch using your conda environment on-prem, please resort to the [Installation Instructions](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/developers_guide.md#Installation) heading in the [**Developer's Guide**](developers_guide.md).
 
 ```bash
 cd <gitclone_directory> && conda env create -n <env_name> environment.yml
@@ -130,6 +130,10 @@ In the early stages of the project, the goal is to find a quasi-optimal ansatz b
 [4] PennyLane dev team, "Adaptive circuits for quantum chemistry". [PennyLane, 13 September 2021](https://pennylane.ai/qml/demos/tutorial_adaptive_circuits.html).
 
 [5] Peruzzo, A., McClean, J., Shadbolt, P. et al. A variational eigenvalue solver on a photonic quantum processor. [Nat Commun 5, 4213 (2014)](https://doi.org/10.1038/ncomms5213).
+  
+# How to Contribute
+
+If you would like to venture off the beaten path and contribute to the `hackeinberg-project` python package as a developer, kindly resort to the [Contribution Guidelines](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/developers_guide.md#Contribution) to know more about the current CI/CD pipeline and the how to's for a good bug report/pull request.
 
 # Developers
 
