@@ -56,7 +56,6 @@ setup(
                               # If there is only one pure python module, set the variable to a list containing a single string value: packages = ["hackeinberg_project"].
                               # This will make Setuptools to look for the hackeinberg_project/__init__.py file that is required so that Python treat the directory as a package. 
                               # One can verify the above is true on https://setuptools.pypa.io/en/latest/userguide/quickstart.html and https://docs.python.org/3/tutorial/modules.html.
-    package_data={"": ["_imgs/*.png"]},
     version=VERSION, # Defines the version format for your package.
     description="qhack2022-hackeinberg-project | Extending Adaptive Methods for Finding an Optimal Circuit Ansatze in VQE Optimization",
     long_description=long_description, # Defines the README.md file content as the description of the package.
