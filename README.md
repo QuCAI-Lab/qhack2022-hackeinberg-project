@@ -58,7 +58,7 @@ To stay up-to-date with the latest version of `qhack2022-hackeinberg-project`, 
 ```bash
 cd <gitclone_directory> && conda env create -n <env_name> environment.yml
 conda activate <env_name> && python -m pip install --no-deps -v -e .
-conda list qhack2022-hackeinberg-project
+conda list hackeinberg-project
 ```
 **Quick test-drive:**
 ```bash
