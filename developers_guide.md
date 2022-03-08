@@ -4,21 +4,65 @@
 </div>
 <br>
 
-# CI/CD
+# Table of Contents
+- **[CI/CD](#cicd)**
+- **[File Structure](#tree)**
+- **[Pip Install from Source](#pipsource)**
+- **[Pip install with Conda](#pipconda)**
+- **[Installation Instructions](#Installation)**
+- **[First Steps](#Steps)**
+- **[Local Update](#Update)**
+- **[Contribution Guidelines](#Contribution)**
+- **[For die-hard Jupyter Notebook users](#Jupyter)**
 
-The current [CI/CD](https://www.redhat.com/en/topics/devops/what-is-ci-cd) tool is [GitHub actions](https://docs.github.com/en/actions) used to automate the software development workflow. The CD hub is this upstream codebase repository, unless you are reading from a forked one.
+# CI/CD<a name="cicd" />  
 
-# Pip Install from Source
+The current [CI/CD](https://www.redhat.com/en/topics/devops/what-is-ci-cd) tool is [GitHub actions](https://docs.github.com/en/actions) used to automate the software development workflow. The CD hub is this upstream codebase repository, unless you are reading from a forked one. 
+
+We are slowly adding a [test suite](https://www.ibm.com/docs/en/elm/7.0.0?topic=scripts-test-cases-test-suites), check back sometime.
+
+
+# File Structure (package tree)<a name="tree" />  
+
+```
+qhack2022-hackeinberg-project
+├── .github
+│   ├── workflows
+│       ├── greetings.yml
+│       └── tests.yml
+├── assets
+│   ├── plot.png
+├── hackeinberg_project
+│   ├── main
+│       └── simulation.py
+│   ├── VERSION.txt
+│   ├── __init__.py
+│   └── sanity.py 
+├── .gitignore
+├── LICENSE.md
+├── README.md
+├── developers_guide.md
+├── environment.yml
+├── presentation.ipynb
+├── pyproject.toml
+├── requirements-dev.txt
+├── requirements.txt
+└── setup.py
+```
+
+# Pip Install from Source<a name="pipsource" />  
 
 >Linux users using the system Python without a virtual environment, should work with the `python3` and `python3 -m pip --user` commands. 
 >Windows users should replace the above commands with `python` and `python -m pip`, respectively.
 
-One can install the [pre-release](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/releases/tag/0.0.1) of `qhack2022-hackeinberg-project` via pip (a python package manager):
+One can install the [pre-release](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/releases/tag/0.0.1) of `hackeinberg-project` on-prem via pip (a python package manager):
 
 1. First, check the installed python version on a command-line interface (CLI):
 ```bash
 python --version
 ```
+If your system's python version on-prem differs from that of the package, fastforward to section [Pip install with Conda](#pipconda).
+
 2. Install `pip` on Linux with the Python 3 migration:
 ```bash
 sudo apt update && apt install python3-pip
@@ -29,7 +73,7 @@ python3 -m pip install --user --upgrade pip
 ```
 To show pip version:
 ```bash
-python3 -m pip --version 
+pip3 --version 
 ```
 To list installed packages:
 ```bash
@@ -39,7 +83,7 @@ pip list
 ```bash
 python3 -m pip install --user git
 ```
-4. To install the pre-release of `qhack2022-hackeinberg-project` from source, simply run:
+4. To install the pre-release of `hackeinberg-project` from source, simply run:
 ```bash
 python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackeinberg-project.git@0.0.1
 ```
@@ -49,9 +93,10 @@ python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackein
 ```
 - Get your password (access token) at: `Settings` >> `Developer settings` >> `Personal access tokens` >> `Generate new token` >> `Select scopes (repo)`.
 
-# Installation Instructions (virtual environment)
 
-**Follow these steps to install `qhack2022-hackeinberg-project` from scratch in a local [Anaconda environment](https://github.com/QuCAI-Lab/educational-resources/tree/main/Conda_Essentials).**
+## Pip install with Conda<a name="pipconda" />  
+
+Follow this instructions to pip install from source in a Conda environment.
 
 1. Download [Anaconda](https://www.anaconda.com/products/individual).
 
@@ -59,33 +104,44 @@ python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackein
 ```bash
 cd <dir> && chmod +x <filename>.sh
 ```
-
 3. Install Anaconda via terminal (Ubuntu users):
 ```bash
 ./<filename>.sh
 ```
+4. Create a Conda env. with the required python version:
+```bash
+conda create -c conda-forge -n <env_name> python==3.7.12 && conda activate <env_name> 
+```
+5. Install from source:
+```bash
+python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackeinberg-project.git@0.0.1
+```
 
-4. Install Git via pip:
+# Installation Instructions (Conda env.)<a name="Installation" />  
+
+**Follow these steps to install the `hackeinberg-project` packageg from scratch in a local [Anaconda environment](https://github.com/QuCAI-Lab/educational-resources/tree/main/Conda_Essentials).**
+
+1. Install Git via pip:
 ```bash
 python3 -m pip install git
 ```
 
-5. [Fork this repository](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork).
+2. [Fork this repository](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork).
 
 
-6. Set up a git linkage by cloning this repository in a custom folder of your local machine:
+3. Set up a git linkage by cloning this repository in a custom folder of your local machine:
 
 ```sh
 mkdir <folder_name> && cd <folder_name> && git clone https://github.com/<your_githubusername>/qhack2022-hackeinberg-project.git
 ```
 
-7. Create a brand new conda environment with all the necessary package dependencies.
+4. Create a brand new conda environment with all the necessary package dependencies.
 
 ```sh
 cd qhack2022-hackeinberg-project && conda env create -n <env_name> environment.yml
 ```
 
-8. Activate the new env. and install `qhack2022-hackeinberg-project`:
+5. Activate the new env. and install the `hackeinberg-project` package:
 
 ```sh
 conda activate <env_name> && python3 -m pip install --no-deps -v -e .
@@ -96,15 +152,15 @@ The `python3 -m pip install .` command is equivalent to the `python3 -m setup.py
 - Flags: 
   - The -m flag in `python3 -m pip` enforce the pip version tied to the active environment (executes pip as the __main__ module).
   - The `--no-deps` flag ensures that `setup.py` will not overwrite the conda dependencies that you have already installed using the `environment.yml` file. In this case, the pip-equivalent packages specified in the `requirements.txt` file will not be used.
-  - The -e flag Install the package without copying any files to the interpreter directory allowing for source code changes to take effect without the use of rebuild and reinstall. It also creates a `hackeinberg_project.egg-info` file that enables the user to access the package information by: `conda list qhack2022-hackeinberg-project`. For more information, see the setuptools [development mode](https://setuptools.pypa.io/en/latest/userguide/development_mode.html).
+  - The -e flag Install the package without copying any files to the interpreter directory allowing for source code changes to take effect without the use of rebuild and reinstall. It also creates a `hackeinberg_project.egg-info` file that enables the user to access the package information by: `conda list hackeinberg-project`. For more information, see the setuptools [development mode](https://setuptools.pypa.io/en/latest/userguide/development_mode.html).
   - The -v flag enables progress display.
 
-# First Steps
+# First Steps<a name="Steps" />  
 
-Verifying the current installed version of `qhack2022-hackeinberg-project` in your local anaconda environment:
+Verifying the current installed version of `hackeinberg-project` in your local anaconda environment:
 
 ```sh
-conda activate <env_name> && conda list qhack2022-hackeinberg-project
+conda activate <env_name> && conda list hackeinberg-project
 ```
 
 Quick test-drive:
@@ -117,7 +173,7 @@ $ python
 >>> hack.penny_simulation()
 ```
 
-# Local Update
+# Local Update<a name="Update" />  
 
 Follow these instructions to sync your forked repository with the upstream repository.
 
@@ -129,27 +185,36 @@ Follow these instructions to sync your forked repository with the upstream repos
 
   2. Click on `Fetch and merge`. "Output message should be: This branch is up to date with QuCAI-Lab:dev."
 
-- To sync both your local (cloned) copy and your remote forked repository from the command line:
+- From the command line:
+
+1. [Sync](https://docs.github.com/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) both your local (cloned) copy and your remote forked repo:
 
 ```sh
-cd <repo-name>
+cd <repo-name> # If you have already forked the repo. Otherwise, run 'git init' to initialize an empty one. 
 git remote -v # To list the current configured remote repository for your fork.
-git remote add upstream https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project # Assigning "upstream" as the original remote repository that will be synced with the fork.
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY # Assigning "upstream" as the remote repository that will be synced with the fork.
 
 git fetch upstream # To retrieve all the new remote-tracking branches and tags updates from the upstream repository.
-git checkout dev # To switch to the existing remote-tracking branch (i.e., the branch fetched from the remote repository) named "dev".
+git checkout <branch-name> # To switch to the existing remote-tracking branch (i.e., the branch fetched from the remote repository) named "<branch-name>".
 
-git merge upstream/dev # To merge the "dev" upstream branch with your local (cloned) branch without losing your local changes.
-                       # If the local branch didn't have any commits, GIT will fast-forward the cloned repo.
+git merge upstream/<branch-name> # To merge the specified upstream branch with your local (cloned) branch without losing your local changes.
+                                 # If the local branch didn't have any commits, GIT will fast-forward the cloned repo.
                                      
-git push -u origin dev # Finally, we push the local changes in order to also update your remote forked repository on the GitHub server.
+git push -u origin <branch-name> # Finally, we push the local changes in order to also update your remote forked repository.
 ```
 
-One can also choose to use `$ git pull`, a shortcut for completing both git fetch and git merge in the same command: 
-  
+Alternatively, one can choose to use `$ git pull`, a shortcut for completing both `$ git fetch` and `$ git merge` in the same command. 
+The full process using an empty directory becomes:
 ```sh
-git pull upstream dev # To fetch updates and merge them with your local (cloned) repository.
-git push -u origin dev # To update your remote forked repository.
+cd <dir-name>
+git init # For an empty directory.
+git remote add upstream <orig_repo_url> # Remote of the the original repo.
+git remote add origin <forked_repo_url> # Remote of the forked repo.
+git pull upstream <branch-name> # To fetch updates and merge them with your local (cloned) repository.
+git add --all
+git commit -m '<commit_message>'
+git branch -M <branch-name>
+git push -u origin <branch-name> # To update your remote forked repository.
 ```
 
 Make sure to commit all new changes made in your local work before running the pull command to avoid a [merge conflict](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
@@ -160,13 +225,92 @@ Make sure to commit all new changes made in your local work before running the p
 conda update -n base conda -y && conda --version
 ```
 
-3. [Update](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=prune#updating-an-environment) your existing conda environment and install `qhack2022-hackeinberg-project`:
+3. [Update](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=prune#updating-an-environment) your existing conda environment and install `hackeinberg-project`:
 
 ```sh
 conda env update -n <env_name_exist> --file environment.yml --prune && conda activate <env_name_exist> && python3 -m pip install --no-deps -e -v .
 ```
 
-# For die-hard Jupyter Notebook users
+# Contribution Guidelines<a name="Contribution" />  
+
+- **Issue Tracker**: If you would like to report a bug, kindly open an issue in the [Issue Tracker](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/issues).
+
+- **Pull request**: If you would like to contribute to the source code, please [fork this repository](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork) and push commits to a [pull request](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/pulls) from your forked repository to the [dev](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/branches) branch of `qhack2022-hackeinberg-project`. Make sure to run a test suite locally before all pushes so that your pull request can be successfully merged.
+
+## Submitting a bug report or a feature request
+
+Follow this template to submit a good bug report or a feature request.
+
+```
+<!--- Title of your Bug Report -->
+- **hackeinberg-project version**:
+- **list of requirements**:
+- **Operating system type and version number**:
+- **Bug description**:
+- **Steps to reproduce the problem**:
+- **Expected behavior**:
+- **Suggested solution(s)**:
+```
+
+## Submitting a Pull Request
+
+`This branch is 1 commit ahead of <QuCAI-Lab>:dev.`
+
+Follow these instructions to submit a good pull request from the command line.
+
+1 - [Fork this repository](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork).
+
+2 - Clone your forked repository to your local machine:
+
+```sh
+git clone https://github.com/<yourgithubusername>/qhack2022-hackeinberg-project.git
+```
+
+3 - Create a new branch for pull request and check out:
+
+```sh
+cd qhack2022-hackeinberg-project
+git checkout -b <yourgithubusername>-pull-request 
+```
+
+4 - Check your changes before commit:
+
+```sh
+git status
+git diff
+```
+
+5 - Set "upstream" as the original remote repository that will be synced with the fork:
+
+```sh
+git remote add upstream https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project
+git remote -v
+```
+
+6 - Set your Local Git Identity:
+
+```sh
+git config user.name "<yourgithubusername>"
+git config user.email "youremail@mail.com"
+git config --list
+```
+
+7 - Push changes from your local shell/Anaconda Prompt, as follows:
+
+```sh
+git add --all
+git commit -m "<topic of your pull request>"
+git push -u upstream <yourgithubusername>-pull-request
+```
+
+8 - On the web UI, click the `Compare & pull request` button.
+
+9 - Finally, click on `Create pull request`.
+
+The admin or CI/CD tool of the upstream (original) repository will review the pull request and merge (or ignore) your proposed changes.
+
+
+# For die-hard Jupyter Notebook users<a name="Jupyter" />
 
 1. Assign your conda environment to jupyter notebook:
 
@@ -193,3 +337,10 @@ jupyter notebook
 ```
 
 With open jupyter notebook in your local web browser, choose the kernel you have just created.
+
+
+# Contributors 
+
+Created and maintained by [@camponogaraviera][1].
+
+[1]: https://github.com/camponogaraviera
