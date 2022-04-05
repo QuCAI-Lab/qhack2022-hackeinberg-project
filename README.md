@@ -15,9 +15,10 @@
   <h2> Extending Adaptive Methods for Finding an Optimal Circuit Ansatze in VQE Optimization</h2>
 </div>
 <br>
-
 <div align="center">
-<b>Authors: ¹Lucas Camponogara Viera, ²José Paulo Marchezi</b>
+  <b>Author (developer): <a target="_blank" href="https://github.com/camponogaraviera">¹Lucas Camponogara Viera</a></b>
+  <br>
+  <b>Attendee (watcher): <a target="_blank" href="https://github.com/zemarchezi">²José Paulo Marchezi</a></b>
 <br>
 <b><a target="_blank" href="https://en.ntnu.edu.tw/">¹National Taiwan Normal University - NTNU, Taipei, Taiwan</a></b>.
 <br>
@@ -114,10 +115,9 @@ In the early stages of the project, the goal is to find a quasi-optimal ansatz b
 
 13. Repeat step 9.
 
-# Challenges:
+# Challenges
 
 - [Quantum Chemistry Challenge](https://github.com/XanaduAI/QHack/blob/master/Open_Hackathon.md#quantum-chemistry-challenge).
-- [Science Challenge](https://github.com/XanaduAI/QHack/blob/master/Open_Hackathon.md#science-challenge).
 
 # References
 
@@ -135,9 +135,10 @@ In the early stages of the project, the goal is to find a quasi-optimal ansatz b
 
 If you would like to venture off the beaten path and contribute to the `hackeinberg-project` python package as a developer, kindly resort to the [Contribution Guidelines](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/developers_guide.md#Contribution) to know more about the current CI/CD pipeline and the how to's for a good bug report/pull request.
 
-# Developers
+# Members
 
-Conceived and developed by [@camponogaraviera](https://github.com/camponogaraviera) and [@zemarchezi](https://github.com/zemarchezi).
+- Theory and implementation: conceived and developed by [Lucas Camponogara Viera](https://github.com/camponogaraviera). 
+- Attendee: participation of [José Paulo Marchezi](https://github.com/zemarchezi) who watched the development of the project to learn more about quantum computing and quantum machine learning.
 
 # License
 
