@@ -44,6 +44,8 @@ except ImportError:
       >> To install qhchem, run: $ python3 -m pip install pennylane-qchem.\n \
       ###################################\n"
        )
+  raise
+'''
 try:
   import qamuy   
 except ImportError:
@@ -56,3 +58,4 @@ except ImportError:
       ###################################\n"
        )
   raise
+'''

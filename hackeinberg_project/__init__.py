@@ -22,7 +22,7 @@ from . import sanity
 # Dependencies 
 import sys
 import pennylane as qml
-import qamuy
+#import qamuy
 
 # About
 def about():

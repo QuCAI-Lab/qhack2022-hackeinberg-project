@@ -72,7 +72,7 @@ $ python
 ```python
 >>> import hackeinberg_project as hack
 >>> hack.about()
->>> hack.penny_simulation(params, H, HF, sets, qubits, conv_tol, threshold)
+>>> energy, sets, angles, n = hack.penny_simulation(params, H, HF, sets, qubits, conv_tol=1e-04, threshold=1.0e-5)
 ```
 
 # Project Description:
@@ -85,7 +85,7 @@ In this work, we combine some of the existing methods applied to the hybrid quan
 2. Hardware friendly (qubit routing): gate coupling allowed only between nearest-neighbor qubits to avoid SWAP gates during qubit routing (mapping from the circuit diagram to a hardware topology).
 3. Small number of hyperparameters: we seek the minimum amount of angles to be optimized in order to avoid classical optimization overhead (when classical computation becomes too expensive).
 
-In the early stages of the project, the goal is to find a quasi-optimal ansatz by restricting the VQE simulation to single and double order excitations only. For the future, we plan to use a deep reinforcement learning approach to learn an exact circuit ansatz considering higher excitation orders and the [Qamuy SDK](https://qamuy.qunasys.com/docs/en/).
+In the early stages of the project, the goal is to find a quasi-optimal ansatz by restricting the VQE simulation to single and double order excitations only. For the future, the plan is to frame the problem as a deep reinforcement learning approach to learn an optimal circuit ansatz considering higher excitation orders and the [Qamuy SDK](https://qamuy.qunasys.com/docs/en/).
 
 ## Algorithm Outline
 

@@ -119,7 +119,7 @@ python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackein
 
 # Installation Instructions (Conda env.)<a name="Installation" />  
 
-**Follow these steps to install the `hackeinberg-project` packageg from scratch in a local [Anaconda environment](https://github.com/QuCAI-Lab/educational-resources/tree/main/Conda_Essentials).**
+**Follow these steps to install the `hackeinberg-project` package from scratch in a local [Anaconda environment](https://github.com/QuCAI-Lab/educational-resources/tree/main/Conda_Essentials).**
 
 1. Install Git via pip:
 ```bash
@@ -170,7 +170,7 @@ $ python
 ```python
 >>> import hackeinberg_project as hack
 >>> hack.about()
->>> hack.penny_simulation()
+>>> energy, sets, angles, n = hack.penny_simulation(params, H, HF, sets, qubits, conv_tol=1e-04, threshold=1.0e-5)
 ```
 
 # Local Update<a name="Update" />  
@@ -312,6 +312,10 @@ The admin or CI/CD tool of the upstream (original) repository will review the pu
 
 # For die-hard Jupyter Notebook users<a name="Jupyter" />
 
+**Q: jupyter notebook/lab throws an error** ``ModuleNotFoundError: No module named 'hackeinberg_project'``.
+
+**A:** You are running ``Jupyter notebook`` outside the ``hackeinberg_project`` environment. To circumvent the issue, assign your conda environment containing the ``hackeinberg_project`` module to your local jupyter notebook from within the Anaconda command-line interpreter, as follows:
+
 1. Assign your conda environment to jupyter notebook:
 
 ```sh
@@ -337,6 +341,9 @@ jupyter notebook
 ```
 
 With open jupyter notebook in your local web browser, choose the kernel you have just created.
+
+If the problem persists, please re-install ``hackeinberg_project`` in a fresh conda environment (create a new one from scratch). 
+The ``environment.yml`` file already instructs ``conda`` to install ``Jupyter`` inside the conda environment.
 
 
 # Contributors 
