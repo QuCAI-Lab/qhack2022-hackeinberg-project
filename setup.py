@@ -73,11 +73,13 @@ setup(
         "Intended Audience :: Science/Research",
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python :: 3 :: Only",
-        "Programming Language :: Python :: 3.7.12",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "Topic :: Scientific/Engineering",
     ], # Specifies the categories for the package in a list of strings.
     keywords="QHack2022 Hackeinberg Project", # Besides comma-separated string, Keywords can also be specified in a list of strings: keywords = ['keyword1', 'keyword2'].
-    python_requires="==3.7.12", # A version specifier used to specify the Requires-Python defined in PEP 345.
+    python_requires=">=3.7", # A version specifier used to specify the Requires-Python defined in PEP 345.
     install_requires=requirements, # Specifies the 'requirements.txt' file that contains a list of required package dependencies to be installed.
     project_urls={
         "Bug Tracker": "https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/issues",

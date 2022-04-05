@@ -55,13 +55,13 @@ qhack2022-hackeinberg-project
 >Linux users using the system Python without a virtual environment, should work with the `python3` and `python3 -m pip --user` commands. 
 >Windows users should replace the above commands with `python` and `python -m pip`, respectively.
 
-One can install the [pre-release](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/releases/tag/0.0.1) of `hackeinberg-project` on-prem via pip (a python package manager):
+One can install the [v0.0.2](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/releases/tag/0.0.2) release of `hackeinberg-project` on-prem via pip (a python package manager):
 
 1. First, check the installed python version on a command-line interface (CLI):
 ```bash
 python --version
 ```
-If your system's python version on-prem differs from that of the package, fastforward to section [Pip install with Conda](#pipconda).
+Note: **If your system's python version on-prem differs from that of the package, fastforward to section [Pip install with Conda](#pipconda)**.
 
 2. Install `pip` on Linux with the Python 3 migration:
 ```bash
@@ -85,7 +85,7 @@ python3 -m pip install --user git
 ```
 4. To install the pre-release of `hackeinberg-project` from source, simply run:
 ```bash
-python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackeinberg-project.git@0.0.1
+python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackeinberg-project.git@0.0.2
 ```
 To install a specific release, run:
 ```bash
@@ -114,7 +114,7 @@ conda create -c conda-forge -n <env_name> python==3.7.12 && conda activate <env_
 ```
 5. Install from source:
 ```bash
-python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackeinberg-project.git@0.0.1
+python3 -m pip install --user git+https://github.com/QuCai-Lab/qhack2022-hackeinberg-project.git@0.0.2
 ```
 
 # Installation Instructions (Conda env.)<a name="Installation" />  
