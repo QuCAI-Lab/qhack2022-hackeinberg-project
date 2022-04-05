@@ -66,7 +66,7 @@ setup(
     license="Creative Commons v1.0", # One can choose a License template from: https://help.github.com/articles/licensing-a-repository.
     platforms=["Windows", "Linux"], # Defines a list of OS that runs the cross-platform application.
     classifiers=[
-        "Development Status :: 1 - Beta", # One can choose between "3 - Alpha", "4 - Beta" or "5 - Production/Stable".
+        "Development Status :: 4 - Beta", # One can choose between "3 - Alpha", "4 - Beta" or "5 - Production/Stable".
         "Environment :: Console",
         "License :: OSI Approved :: Creative Commons Software License",
         "Intended Audience :: Developers",
