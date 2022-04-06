@@ -16,9 +16,9 @@
 </div>
 <br>
 <div align="center">
-  <b>Author (developer): <a target="_blank" href="https://github.com/camponogaraviera">¹Lucas Camponogara Viera</a></b>
+  <b>Developer: <a target="_blank" href="https://github.com/camponogaraviera">¹Lucas Camponogara Viera</a></b>
   <br>
-  <b>Attendee (watcher): <a target="_blank" href="https://github.com/zemarchezi">²José Paulo Marchezi</a></b>
+  <b>Auditor: <a target="_blank" href="https://github.com/zemarchezi">²José Paulo Marchezi</a></b>
 <br>
 <b><a target="_blank" href="https://en.ntnu.edu.tw/">¹National Taiwan Normal University - NTNU, Taipei, Taiwan</a></b>.
 <br>
@@ -138,7 +138,7 @@ If you would like to venture off the beaten path and contribute to the `hackeinb
 # Members
 
 - Theory and implementation: conceived and developed by [Lucas Camponogara Viera](https://github.com/camponogaraviera). 
-- Attendee: participation of [José Paulo Marchezi](https://github.com/zemarchezi) who watched the development of the project to learn more about quantum computing and quantum machine learning.
+- Auditor: code audited by [José Paulo Marchezi](https://github.com/zemarchezi) who has an interest in quantum computing and quantum machine learning.
 
 # License
 
