@@ -152,7 +152,7 @@ The `python3 -m pip install .` command is equivalent to the `python3 -m setup.py
 - Flags: 
   - The -m flag in `python3 -m pip` enforce the pip version tied to the active environment (executes pip as the __main__ module).
   - The `--no-deps` flag ensures that `setup.py` will not overwrite the conda dependencies that you have already installed using the `environment.yml` file. In this case, the pip-equivalent packages specified in the `requirements.txt` file will not be used.
-  - The -e flag Install the package without copying any files to the interpreter directory allowing for source code changes to take effect without the use of rebuild and reinstall. It also creates a `hackeinberg_project.egg-info` file that enables the user to access the package information by: `conda list hackeinberg-project`. For more information, see the setuptools [development mode](https://setuptools.pypa.io/en/latest/userguide/development_mode.html).
+  - The -e flag stands for editable mode (recommended for developers). It installs the package without copying any files to the interpreter directory allowing for source code changes to be instantly propagated to the code library without the need of rebuild and reinstall, however, the python process/kernel will need to be restarted. It also creates a `hackeinberg_project.egg-info` file that enables the user to access the package information by: `conda list hackeinberg-project`. For more information, see the setuptools [development mode](https://setuptools.pypa.io/en/latest/userguide/development_mode.html).
   - The -v flag enables progress display.
 
 # First Steps<a name="Steps" />  

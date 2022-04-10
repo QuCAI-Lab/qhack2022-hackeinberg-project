@@ -5,18 +5,19 @@
 # PACKAGES
 numpy==1.20.3 
 PennyLane==0.21.0
-pennylane-qchem # Depends on pyscf and openfermionpyscf
 pyscf #No support for native Windows. 
 openfermionpyscf==0.5
+pennylane-qchem==0.21.0 # Depends on pyscf and openfermionpyscf
+matplotlib==3.5.1
 jupyter #Run using: "$ jupyter notebook"
 
 # EXTRA PACKAGES
 #--extra-index-url https://[user name]:[password]@download.qamuy.qunasys.com/simple/qamuy-client
 ## Replace [user name] and [password] with those provided by https://qamuy.qunasys.com/.
 
-# CLI - command-line interface
+# Command-Line Interface (CLI) Hacks
 ## To show the current pip version, run: $ pip --version
-## To install an individual package, run: $ python3 -m pip install <package-name>.
+## To manually install an individual package, run: $ python3 -m pip install <package-name>.
 ## To list installed packages, run: $ pip list
 ## To show a package info, run: $ pip show <package-name>
 ## To upgrade a package, run: $ python3 -m pip install --user --upgrade <package-name>==<version-number>
