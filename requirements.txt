@@ -1,35 +1,35 @@
 # DEPENDENCIES
 # This file defines the pip-equivalent package dependencies to be installed with either setup.cfg or setup.py modules, or via the command-line interface (CLI) on prem.
-# pip can be installed via: "conda install pip==21.1.3" (conda env. on prem) or "apt install python3-pip" (Ubuntu-derivatives).
+# pip can be installed via: "conda install -yc conda-forge pip==22.1.2" (conda env. on prem) or "apt install python3-pip" (Ubuntu-derivatives).
 
 # PACKAGES
-numpy==1.20.3 
-PennyLane==0.21.0
-pyscf #No support for native Windows. 
-openfermionpyscf==0.5
-pennylane-qchem==0.21.0 # Depends on pyscf and openfermionpyscf
+numpy==1.22.4
 matplotlib==3.5.1
+watermark==2.3.0 # IPython magic extension for versioning control between Colab notebooks.
+pylatexenc==2.10 # The 'pylatexenc' library is required to use 'MatplotlibDrawer'.
 jupyter #Run using: "$ jupyter notebook"
+tqdm # To display a progress bar.
+qiskit[all]
+pyscf #No support for native Windows
 
-# EXTRA PACKAGES
-#--extra-index-url https://[user name]:[password]@download.qamuy.qunasys.com/simple/qamuy-client
-## Replace [user name] and [password] with those provided by https://qamuy.qunasys.com/.
-
-# Command-Line Interface (CLI) Hacks
+# CLI - command-line interface
+# Note: the flags '--user' and '--version' can be abbreviated to '-U' and '-V', respectively.
 ## To show the current pip version, run: $ pip --version
-## To manually install an individual package, run: $ python3 -m pip install <package-name>.
+## To upgrade pip, run: $ python3 -m pip install --user --upgrade pip 
 ## To list installed packages, run: $ pip list
+## To install an individual package, run: $ python3 -m pip install --user <package-name>.
 ## To show a package info, run: $ pip show <package-name>
 ## To upgrade a package, run: $ python3 -m pip install --user --upgrade <package-name>==<version-number>
 ## To uninstall packages, run: $ pip uninstall <package1> <package2>
 
-# SETUP.py
+# If there is a SETUP.py file
 ## The setup.py module reads this file and installs each package via the pip tool (a python package manager).
 ## Alternatively, one can manually install all dependencies on this file via: $ python3 -m pip install -r requirements.txt
 ## To manually upgrade this file dependencies, run: $ python3 -m pip install -U -r requirements.txt
 
 # NOTES
-## PySCF does not support native windows platform. See issue #750 at https://github.com/pyscf/pyscf/issues/750. On linux: python3 -m pip install pyscf --user
+## Windows users should replace "python3" with "python".
+## The "--user" flag can be replaced with the abbreviate "-U" flag. 
 ## The -m flag in "python3 -m pip" enforce the pip version tied to the active environment, i.e, executes pip as the __main__ module).
 ## The 'pip install jupyter' command will install the Jupyter system, including the jupyter notebook, qtconsole, and the IPython kernel.
 ## One should avoid 'pip install conda' since it will not give conda as a standalone application.
