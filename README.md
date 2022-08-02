@@ -63,11 +63,11 @@ conda list hackeinberg-project
 ```
 **Quick test-drive:**
 ```bash
->>> python hackeinberg_project/main/simulation.py
+$ python3 hackeinberg_project/main/simulation.py
 ```
 **Alternatively, run the package:**
 ```bash
-$ python
+$ python3
 ```
 ```python
 >>> import hackeinberg_project as hack
@@ -79,13 +79,13 @@ $ python
 
 Most widely considered hardware-efficient and Chemistry-inspired ansatze, although generic, suffer from either barren plateaus [[1](https://www.nature.com/articles/s41467-018-07090-4)] or inconsistency under low-order trotterization steps [[2](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.9b01083)], respectively. In order to circumvent this drawback, different algorithms for optimization of variational quantum circuits, the so-called adaptive circuits, have already been proposed in the literature [[4](https://pennylane.ai/qml/demos/tutorial_adaptive_circuits.html)]. One example is the Adaptive Derivative-Assembled Pseudo-Trotter ansatz Variational Quantum Eigensolver (ADAPT-VQE) [[3](https://www.nature.com/articles/s41467-019-10988-2)]. In a nutshell, the ADAPT-VQE approach is to grow the ansatz by adding fermionic operators one-at-a-time so to preserve the amount of correlation energy. This approach can also be regarded as a particular optimization procedure for Full Configuration Interaction (FCI) VQE.
 
-In this work, we combine some of the existing methods applied to the hybrid quantum-classical Variational Quantum Eigensolver (VQE) [[5](https://doi.org/10.1038/ncomms5213)] algorithm for the particular case of the ground state of the LiH molecule. We prioritize the minimization of the circuit depth (the longest sequence of gates acting on a qubit register) at the cost of increasing parameter count (the number of parameters to be optimized) given the tradeoff between difficulty in implementation on NISQ devices vs difficulty in optimization on classical computers, respectively. The baseline approach took into consideration the following features for a good ansatz:
+In this work, we combine some of the existing methods applied to the hybrid quantum-classical Variational Quantum Eigensolver (VQE) [[5](https://doi.org/10.1038/ncomms5213)] algorithm to find the ground state of the LiH molecule. We prioritize the minimization of the [circuit depth](https://qiskit.org/documentation/_images/depth.gif) (total number of gate layers executed in parallel) at the cost of increasing parameter count (total number of parameters to be optimized) given the tradeoff between difficulty in implementation on NISQ devices vs difficulty in optimization on classical computers, respectively. A baseline approach must take into consideration the following features/rule-of-thumbs for designing parameterized circuits to run on NISQ devices:
 
-1. Coherence friendly: the circuit must be shallow, i.e, have a small number of layers (hence gates) in order to be computed during a time window smaller than the decoherence time.
-2. Hardware friendly (qubit routing): gate coupling must be allowed only between nearest-neighbor physical qubits in the hardware processor in order to avoid non-trivial transpilation, i.e, the use of SWAP gates in qubit routing (mapping from the circuit diagram to a hardware topology).
-3. Small number of hyperparameters: we seek the minimum amount of angles to be optimized in order to avoid classical optimization overhead (when classical computation becomes too expensive).
+1. Coherence friendly: the circuit must be shallow, i.e, have a small number of layers (small circuit depth) in order to be executed during a time window shorter than decoherence time.
+2. Hardware friendly (qubit routing): gate coupling must be allowed only between nearest-neighbor physical qubits etched into the hardware processor in order to avoid non-trivial transpilation, i.e, the use of SWAP gates (non-native) during qubit routing (mapping from the circuit diagram to a hardware topology).
+3. Small number of hyperparameters: the algorithm must seek the minimum number of angles to be optimized in order to avoid classical optimization overhead (when classical computation becomes too expensive).
 
-In the early stages of the project, the goal is to find a quasi-optimal ansatz by restricting the VQE simulation to single and double order excitations only. For the future, the plan is to frame the problem as a deep reinforcement learning approach to learn an optimal circuit ansatz considering higher excitation orders, and perform the simulation on a real quantum hardware unsing the [Qamuy SDK](https://qamuy.qunasys.com/docs/en/).
+In the early stages of the project, the goal is to find a quasi-optimal ansatz by restricting the VQE simulation to single and double order excitations only. In the future, the plan is to frame the adaptive circuit approach as a deep reinforcement learning problem in order to learn an optimal circuit ansatz considering higher excitation orders, and to perform the simulation on a real quantum hardware unsing the [Qamuy SDK](https://qamuy.qunasys.com/docs/en/).
 
 ## Algorithm Outline
 
