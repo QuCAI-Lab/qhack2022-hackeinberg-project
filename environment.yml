@@ -4,18 +4,23 @@ channels:
 dependencies:
   - python==3.7.12 
   - numpy==1.20.3
-  - PennyLane==0.21.0
   - matplotlib==3.5.1
   - jupyter
+  - pip:
+    - PennyLane==0.21.0
+    - pyscf
+    - openfermionpyscf==0.5
+    - pennylane-qchem==0.21.0
 
 # To create this environment:
 ## conda env create -n <env_name> environment.yml 
+# Alternative:
+## conda env create -f environment.yml 
 
 # To manually install the above packages with Conda:
 ## $ conda update -n base -c defaults conda
 ## $ conda install python==3.7.12 
 ## $ conda install numpy==1.20.3 
-## $ conda install -c conda-forge PennyLane==0.21.0
 ## $ conda install matplotlib==3.5.1
 ## $ conda install jupyter
 

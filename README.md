@@ -50,30 +50,7 @@ Comparison with different approaches can be seen in the [jupyter notebook file](
   <a href="https://raw.githubusercontent.com/QuCAI-Lab/qhack2022-hackeinberg-project/dev/assets/plot.png"><img src="assets/plot.png" height="500" width="500" /></a>
 </div>
 
-# First Steps
-
-To stay up-to-date with the latest version of the `hackeinberg-project`, we strongly recommend you to [fork this repository](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork). If you would like to install the source code from scratch using your conda environment on-prem, please resort to the [Installation Instructions](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/developers_guide.md#Installation) heading in the [**Developer's Guide**](developers_guide.md).
-
-```bash
-cd <gitclone_directory> && conda env create -n <env_name> environment.yml
-conda activate <env_name> && python -m pip install --no-deps -v -e .
-conda list hackeinberg-project
-```
-**Quick test-drive:**
-```bash
-$ python3 hackeinberg_project/main/simulation.py
-```
-**Alternatively, run the package:**
-```bash
-$ python3
-```
-```python
->>> import hackeinberg_project as hack
->>> hack.about()
->>> energy, sets, angles, n = hack.penny_simulation(params, H, HF, sets, qubits, conv_tol=1e-04, threshold=1.0e-5)
-```
-
-# Project Description:
+# Project Description
 
 Most widely considered hardware-efficient and Chemistry-inspired ansatze, although generic, suffer from either barren plateaus [[1](https://www.nature.com/articles/s41467-018-07090-4)] or inconsistency under low-order trotterization steps [[2](https://pubs.acs.org/doi/abs/10.1021/acs.jctc.9b01083)], respectively. In order to circumvent this drawback, different algorithms for optimization of variational quantum circuits, the so-called adaptive circuits, have already been proposed in the literature [[4](https://pennylane.ai/qml/demos/tutorial_adaptive_circuits.html)]. One example is the Adaptive Derivative-Assembled Pseudo-Trotter ansatz Variational Quantum Eigensolver (ADAPT-VQE) [[3](https://www.nature.com/articles/s41467-019-10988-2)]. In a nutshell, the ADAPT-VQE approach is to grow the ansatz by adding fermionic operators one-at-a-time so to preserve the amount of correlation energy. This approach can also be regarded as a particular optimization procedure for Full Configuration Interaction (FCI) VQE.
 
@@ -117,6 +94,60 @@ In the early stages of the project, the goal is to find a quasi-optimal ansatz b
 
 - [Quantum Chemistry Challenge](https://github.com/XanaduAI/QHack/blob/master/Open_Hackathon.md#quantum-chemistry-challenge).
 
+# Pip install from git clone
+
+```bash
+git clone https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project.git && cd qhack2022-hackeinberg-project
+```
+```bash
+conda env create -f environment.yml && conda activate qhack2022-hackeinberg-project
+```
+```bash
+python -m pip install --no-deps -v -e . && conda list hackeinberg-project
+```
+  
+# Pip install from source
+  
+Use below command-line if you would like to install the [latest version](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/tags) of the source code (using the setup.py file) in a local anaconda environment named "qhack2022". 
+  
+**Note:** on Linux, this will install the package in the `~/.local/lib/python3.7/site-packages/` folder.
+
+```bash
+conda create -c conda-forge -n qhack2022 python==3.7.12 && conda activate qhack2022
+```
+```bash
+python3 -m pip install --user git+https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project.git#egg=hackeinberg_project
+```
+
+For more information, resort to the [Pip Install from Source](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/developers_guide.md#pip-install-from-source) heading in the [**Developer's Guide**](developers_guide.md).
+
+- Flags: 
+  - `-m pip` flag: instructs python to run the pip module as a script.
+  - The `--no-deps` flag ensures that `setup.py` will not overwrite the conda dependencies that you have already installed using the `environment.yml` file. In this case, the pip-equivalent packages specified in the `requirements.txt` file will not be used.
+  - [`--user`](https://pip.pypa.io/en/stable/cli/pip_install/#install-user) flag: sets the package installation only for the current user.
+  - `git+address.git`: specifies the Git repository address with ending .git.
+  - `#egg=name`: specifies the package [name explicitly](https://pip.pypa.io/en/stable/cli/pip_install/#working-out-the-name-and-version) as `name`.
+  - `-v` flag: enables progress display (verbose).
+  - `-e` flag: stands for editable mode (recommended for developers). It installs the package without copying any files to the interpreter directory allowing for source code changes to be instantly propagated to the code library without the need of rebuild and reinstall, however, the python process/kernel will need to be restarted. It sets the pacakge info: Build dev_0 and Channel \<develop>. It also creates the `hackeinberg_project.egg-info` file that enables the user to access the package information by: `conda list hackeinberg-project`. For more information, see the setuptools [development mode](https://setuptools.pypa.io/en/latest/userguide/development_mode.html).
+  
+# First steps
+
+To stay up-to-date with the latest version of the `hackeinberg-project`, we strongly recommend you to [fork this repository](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/fork). 
+  
+**Quick test-drive:**
+```bash
+$ python3 hackeinberg_project/_main/simulation.py
+```
+**Alternatively, run the package:**
+```bash
+$ python3
+```
+```python
+>>> import hackeinberg_project as hack
+>>> hack.about()
+>>> energy, sets, angles, n = hack.penny_simulation(params, H, HF, sets, qubits, conv_tol=1e-04, threshold=1.0e-5)
+```
+  
 # References
 
 \[1] McClean, J.R., Boixo, S., Smelyanskiy, V.N. et al. Barren plateaus in quantum neural network training landscapes. [Nat Commun 9, 4812 (2018)](https://www.nature.com/articles/s41467-018-07090-4). 
@@ -148,3 +179,4 @@ Created and maintained by [@camponogaraviera][1].
 
 [1]: https://github.com/camponogaraviera
 [2]: https://github.com/zemarchezi
+

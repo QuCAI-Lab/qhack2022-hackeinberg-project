@@ -1,4 +1,14 @@
-#! /usr/bin/python3
+
+# This code is part of qhack2022-hackeinberg-project.
+#
+# (C) Copyright QuCAI-Lab, 2022.
+#
+# This code is licensed under the Creative Commons Zero v1.0 Universal License. 
+# You may obtain a copy of the License in the root directory of this source tree.
+
+###########################################################################
+
+"""Main module of the Adapt-VQE algorithm"""
 
 import pennylane as qml
 from pennylane import numpy as np

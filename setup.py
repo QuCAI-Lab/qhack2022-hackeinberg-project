@@ -1,6 +1,6 @@
 # This code is part of qhack2022-hackeinberg-project.
 #
-# (C) Copyright NTNU QuCAI-Lab, 2022.
+# (C) Copyright QuCAI-Lab, 2022.
 #
 # This code is licensed under the Creative Commons Zero v1.0 Universal License. 
 # You may obtain a copy of the License in the root directory of this source tree.
@@ -56,6 +56,7 @@ setup(
                               # If there is only one pure python module, set the variable to a list containing a single string value: packages = ["hackeinberg_project"].
                               # This will make Setuptools to look for the hackeinberg_project/__init__.py file that is required so that Python treat the directory as a package. 
                               # One can verify the above is true on https://setuptools.pypa.io/en/latest/userguide/quickstart.html and https://docs.python.org/3/tutorial/modules.html.
+    package_data={'hackeinberg_project': ['VERSION.txt']}, # To include the `VERSION.txt` file when installing with `pip install git+`.
     version=VERSION, # Defines the version format for your package.
     description="qhack2022-hackeinberg-project | Extending Adaptive Methods for Finding an Optimal Circuit Ansatze in VQE Optimization",
     long_description=long_description, # Defines the README.md file content as the description of the package.

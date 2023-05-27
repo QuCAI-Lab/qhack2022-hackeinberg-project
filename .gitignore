@@ -1,7 +1,57 @@
+#------------------------------#
+# Gitignore Cheat Sheet:
+## To ignore all files (located anywhere) with extension ".ext": *.ext
+## To ignore all files with extension ".ext" except the "filename.ext" file: !filename.ext
+## To ignore all directories named ".dir" and all its contents: .dir/ 
+## To ignore a "filename.ext" file located in the root directory: /filename.ext
+## To ignore any file (located anywhere) named "filename.ext": filename.ext
+## To ignore any file or directory named ".filename": .filename
+## To ignore all files and directories starting with "filename": filename*
+
+# Receipt for pushing after updating the .gitignore file:
+## git rm -r --cached . # To remove already tracked files from Git cache. 
+## git add --all :/
+#------------------------------#
+
+# Simulation files
+molecule_pyscf_sto-3g.hdf5
+
 # Byte-compiled / optimized / DLL files
-__pycache__/
+__pycache__/ # Windows: for /D /R  %i in (*__pycache__*)do rmdir /s /q "%~i"
 *.py[cod]
 *$py.class
+
+# C extensions
+*.so
+
+# File-based project format
+*.iws
+
+# JetBrains IDEs
+.idea/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+ ## AWS User-specific
+.idea/**/aws.xml
+ ## Generated files
+.idea/**/contentModel.xml
+ ## Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+ ## Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+
+.idea/vcs.xml
+.idea/modules.xml
 
 # Distribution / packaging
 .Python
@@ -23,6 +73,13 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+# PyInstaller
+*.manifest
+*.spec
+
+# Pytest
+pytest_report.xml
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -38,12 +95,20 @@ coverage.xml
 .pytest_cache/
 cover/
 
+# Translations
+*.mo
+*.pot
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
 
 # pyenv
 .python-version
@@ -60,3 +125,13 @@ venv.bak/
 # Spyder project settings
 .spyderproject
 .spyproject
+
+# Sphinx Documentation
+##*.bat 
+##source/
+##build/
+##Makefile 
+##docs/_build/
+
+# mkdocs Documentation
+/site

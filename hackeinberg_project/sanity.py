@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-
 # This code is part of qhack2022-hackeinberg-project.
 #
-# (C) Copyright NTNU QuCAI-Lab, 2022.
+# (C) Copyright QuCAI-Lab, 2022.
 #
 # This code is licensed under the Creative Commons Zero v1.0 Universal License. 
 # You may obtain a copy of the License in the root directory of this source tree.
