@@ -1,9 +1,8 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/presentation.ipynb)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)
-[![License](https://img.shields.io/github/license/QuCAI-Lab/QHack2022.svg?logo=CreativeCommons&style=flat-square)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/LICENSE.md)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-orange?style=flat-square)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/graphs/commit-activity)
 [![Build Status](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/actions/workflows/tests.yml/badge.svg?branch=dev)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/actions/workflows/tests.yml)
+[![License](https://img.shields.io/github/license/QuCAI-Lab/QHack2022.svg?logo=CreativeCommons&style=flat-square)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/LICENSE.md)
 [![Release](https://img.shields.io/github/release/QuCAI-Lab/qhack2022-hackeinberg-project.svg)](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/releases)
 
 <div align="center">
@@ -42,7 +41,7 @@ For specific versions, see the [requirements.txt](requirements.txt) file.
 
 # Preliminary Results
 
-**Get the source code [here](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/hackeinberg_project/main/simulation.py).**
+**Get the source code [here](hackeinberg_project/_main/simulation.py).**
 
 Comparison with different approaches can be seen in the [jupyter notebook file](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/presentation.ipynb).
 
