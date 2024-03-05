@@ -15,13 +15,11 @@
 </div>
 <br>
 <div align="center">
-  <b>Developer: <a target="_blank" href="https://github.com/camponogaraviera">¹Lucas Camponogara Viera</a></b>
-  <br>
-  <b>Auditor: <a target="_blank" href="https://github.com/zemarchezi">²José Paulo Marchezi</a></b>
+  <b>Authors: <a target="_blank" href="https://github.com/camponogaraviera">¹Lucas Camponogara Viera</a> and <a target="_blank" href="https://github.com/zemarchezi">²José Paulo Marchezi</a></b>.
 <br>
 <b><a target="_blank" href="https://en.ntnu.edu.tw/">¹National Taiwan Normal University - NTNU, Taipei, Taiwan</a></b>.
 <br>
-<b><a target="_blank" href="https://www.gov.br/inpe/pt-br">²National Institute for Space Research - INPE, São José dos Campos, SP, Brazil.</a></b>.
+<b><a target="_blank" href="https://www.gov.br/inpe/pt-br">²National Institute for Space Research - INPE, São José dos Campos, SP, Brazil</a></b>.
 <br>
 <b><a target="_blank" href="http://english.nssc.cas.cn/">²State  Key  Laboratory  of  Space  Weather,  National  Space  Science  Center, Chinese  Academy  of  Sciences, China</a></b>.
 </div>
@@ -29,11 +27,12 @@
 <!--  -->
 
 # Dependencies
-<a href="https://www.python.org/"><img height="27" src="https://www.python.org/static/img/python-logo.png">
-<a href="https://numpy.org/"><img height="27" src="https://numpy.org/images/logo.svg">
-<a href="https://matplotlib.org"><img height="27" src="https://matplotlib.org/_static/images/logo2.svg"> 
-<a href="https://pennylane.ai/"><img height="27" src="https://pennylane.ai/img/xanadu_x.png"></a>
-<a href="https://qamuy.qunasys.com/docs/en/"><img height="27" src="https://qunasys.com/_nuxt/img/logo_header.cb3726d.svg"></a>
+<a href="https://www.python.org/"><img height="27" src="https://www.python.org/static/img/python-logo.png"></a>
+<a href="https://numpy.org/"><img height="27" src="https://numpy.org/images/logo.svg"></a>
+<a href="https://matplotlib.org"><img height="27" src="https://matplotlib.org/_static/images/logo2.svg"></a>
+<a href="https://pennylane.ai/"><img height="27" src="https://pennylane.ai/img/logo.png"></a>
+&nbsp;
+<a href="https://qamuy.qunasys.com/docs/en/"><img height="27" src="https://qunasys.com/_nuxt/img/logo_Qunasys.a30187d.svg"></a>
 <br>
 <br>
   
@@ -163,19 +162,13 @@ $ python3
 
 If you would like to venture off the beaten path and contribute to the `hackeinberg-project` python package as a developer, kindly resort to the [Contribution Guidelines](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project/blob/dev/developers_guide.md#Contribution) to know more about the current CI/CD pipeline and the how to's for a good bug report/pull request.
 
-# Members
+# Group distribution
 
-- Theory and implementation: conceived and developed by [Lucas Camponogara Viera](https://github.com/camponogaraviera). 
-- Auditor: code audited by [José Paulo Marchezi](https://github.com/zemarchezi) who has an interest in quantum computing and quantum machine learning.
+- [Lucas Camponogara Viera](https://github.com/camponogaraviera) (theory and implementation). 
+- [José Paulo Marchezi](https://github.com/zemarchezi) (code auditor).
 
 # License
 
 This work is licensed under a [Creative Commons Zero v1.0 Universal](LICENSE.md) license.
 
 <hr>
-
-Created and maintained by [@camponogaraviera][1].
-
-[1]: https://github.com/camponogaraviera
-[2]: https://github.com/zemarchezi
-
